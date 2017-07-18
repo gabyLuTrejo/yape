@@ -5,10 +5,13 @@ section.contain{
 	min-height: 100vh;
 }
 .img-height{
-    height: 200px;
+    height: 180px;
     display: inline-block;
     width: 70%;
-    margin: 20% 0 0 0;
+    margin: 15% 0 0 0;
+}
+.gray-text{
+	color: #8f8f8f;
 }
 .btn-yellow{
 	background-color: #fbd43b;
@@ -16,4 +19,16 @@ section.contain{
 }
 .padd__sides-10{
 	padding: 0 10px;
+}
+.carousel .indicators .indicator-item.active {
+    background-color: #f64552;
+}
+.carousel .indicators .indicator-item {
+    background-color: #8f8f8f;
+}
+.carousel .indicators {
+    bottom: 17%;
+}
+.marginTop-20{
+	margin-top: 20%;
 }
