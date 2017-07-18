@@ -1,0 +1,19 @@
+section.contain{
+	height: 100vh;
+}
+.carousel-height{
+	min-height: 100vh;
+}
+.img-height{
+    height: 200px;
+    display: inline-block;
+    width: 70%;
+    margin: 20% 0 0 0;
+}
+.btn-yellow{
+	background-color: #fbd43b;
+	width: 80%;
+}
+.padd__sides-10{
+	padding: 0 10px;
+}
