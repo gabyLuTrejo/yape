@@ -30,16 +30,16 @@ router.get('/', (req, res) => {
 
 app.use('/api',apiUsers(router,db));
 
-const port = process.env.PORT || 3000;
-
-app.listen(port, () => {
-  console.log('Server running on port '+port+'!');
-});
-
-
 app.use('/api', express.static(__dirname + '/api'));
+app.use('/views', express.static(__dirname + '/views'));
 app.use('/materialize', express.static(__dirname + '/node_modules/materialize-css'));
 
 app.get('/', function(require, response){
 	response.sendFile(__dirname +'/index.html');
+});
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log('Server running on port '+port+'!');
 });
