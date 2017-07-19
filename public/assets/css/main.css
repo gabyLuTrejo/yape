@@ -1,4 +1,4 @@
-body{
+section.contain{
 	height: 100vh;
 }
 .carousel-height{
@@ -21,6 +21,9 @@ body{
 }
 .padd__sides-10{
 	padding: 0 10px;
+}
+.paddTop-50{
+	padding: 50% 0 5%;
 }
 .carousel .indicators .indicator-item.active {
     background-color: #f64552;
