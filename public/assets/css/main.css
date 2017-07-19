@@ -15,7 +15,9 @@ section.contain{
 }
 .btn-yellow{
 	background-color: #fbd43b;
-	width: 80%;
+}
+.width-80{	
+	width: 80%;	
 }
 .padd__sides-10{
 	padding: 0 10px;
