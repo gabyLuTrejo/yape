@@ -4,7 +4,6 @@ const levelup         = require('levelup'); // Base de datos
 const morgan          = require('morgan'); // Sistema de logging (muestra en la cosa los request)
 const morganjson      = require('morgan-json');
 const apiUsers        = require('./api/users'); //Endpoints relacionados al User model
-//const path = require('path');
 
 const app = express();
 const db  = levelup('./api/users', {valueEncoding: 'json'});
@@ -18,8 +17,11 @@ const format = morganjson({
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use('/public',express.static('public'));
+app.use(express.static('public'));
 app.use(morgan(format));
+
+//
+app.use('/node', express.static(__dirname + '/node_modules'));
 
 
 let router = express.Router();
@@ -30,12 +32,9 @@ router.get('/', (req, res) => {
 
 app.use('/api',apiUsers(router,db));
 
-app.use('/api', express.static(__dirname + '/api'));
-app.use('/views', express.static(__dirname + '/views'));
-app.use('/materialize', express.static(__dirname + '/node_modules/materialize-css'));
 
 app.get('/', function(require, response){
-	response.sendFile(__dirname +'/index.html');
+	response.sendFile(__dirname +'/public/index.html');
 });
 
 const port = process.env.PORT || 3000;
