@@ -1,31 +1,35 @@
 console.log("js gulp-watch");
 
-$(document).ready(function(){
-	$('.carousel').carousel();
+const loadPage = function(){
 	$('.carousel.carousel-slider').carousel({fullWidth: true});
 	$('#btn-init').click(nextPage);
-});
+	$("#formPhone").submit(validate);
+	$("#phoneNumber").keyup(digits);
+};
 
 const nextPage = function(){
 	console.log("next");
 	window.location.href="views/validate.html";
 }
 
-
-/*function getJSON(url){
-	return new Promise(function(resolve,reject){
-    	var ajax = new XMLHttpRequest();
-		ajax.open("GET",url);
-      	ajax.send();
-      	ajax.onreadystatechange = function(){
-            if(ajax.readyState == 4){
-              resolve(JSON.parse(ajax.responseText));
-            }
-		}
-	});
+const validate = function(e){
+	e.preventDefault();
 }
 
-getJSON("api/")
-.then(function (message) {
-	console.log(message)
-})*/
+const digits = function(){
+	var digitNumbers = $("#phoneNumber").val().length;	
+	if (digitNumbers == 10) {
+		$("#term-conditions").click(termsValidate);	
+	}
+}
+
+const termsValidate = function(){
+	var terms = $("#btn-next")[0].disabled;
+	if (terms) {
+		$("#btn-next")[0].disabled = false;
+	} else {
+		$("#btn-next")[0].disabled = true;
+	}
+}
+
+$(document).ready(loadPage);
