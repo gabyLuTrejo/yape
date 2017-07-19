@@ -1,7 +1,8 @@
 console.log("js gulp-watch");
 
 const api = {
-    url: 'http://localhost:3000/api/registerNumber'
+    url: 'http://localhost:3000/api/registerNumber',
+    code: 'http://localhost:3000/api/resendCode'
 };
 
 const loadPage = function(){
@@ -19,7 +20,18 @@ const nextPage1 = function(){
 
 const nextPage2 = function(){
 	console.log("next");
-	window.location.href="code.html";
+	$.post(api.url,{
+		"phone": $("#phoneNumber").val(),
+		"terms": true
+	}).then(function (response){
+		console.log(response)
+		alert("Código de Validación: " + response.data.code);
+		window.location.href="code.html ";
+	}).catch(function (error) {
+        console.log(error);
+        alert("Teléfono no válido, ya está registrado");
+    })	
+	
 }
 
 const validate = function(e){
