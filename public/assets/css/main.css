@@ -10,6 +10,9 @@ section.contain{
     width: 70%;
     margin: 15% 0 0 0;
 }
+.gray-dark{
+	color: #212121;
+}
 .gray-text{
 	color: #8f8f8f;
 }
@@ -37,3 +40,4 @@ section.contain{
 .marginTop-15{
 	margin-top: 15%;
 }
+.material-icons.md-48 { font-size: 48px; }
