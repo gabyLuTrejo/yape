@@ -25,7 +25,7 @@
 			  <div class="input-field">
 			    <div class="gray-text col s10 offset-s1"> 
 	            	<i class="material-icons prefix">credit_card</i>            	
-	            	<input id="cardNumber" type="number" class="center validate">
+	            	<input id="cardNumber" type="number" class="center validate" max="16">
 	            </div>	            
 	          </div>
 	        </div>
@@ -39,15 +39,15 @@
                     <span>Fecha de Vencimiento </span>
                 </div>
                 <div class="col s3">
-                    <input type="text" class="width-66 center" placeholder="Mes">
+                    <input id="cardMonth" type="text" class="width-66 center" placeholder="Mes">
                     <span class="marginLeft-20 gray-dark">/</span>
                 </div>
                 <div class="col s2">
-                    <input type="text" class="center" placeholder="Año">
+                    <input id="cardYear" type="text" class="center" placeholder="Año">
                 </div>
             </div>
             <div class="row center marginTop-15">
-		      <button id="btn-next" class="btn waves-effect waves-light btn-yellow" type="submit" name="action" disabled>CONTINUAR</button>
+		      <button id="btn-next3" class="btn waves-effect waves-light btn-yellow" type="submit" name="action" disabled>CONTINUAR</button>
 		    </div>
 	    </form>
 
@@ -55,5 +55,6 @@
 	  <script type="text/javascript" src="./../node/jquery/dist/jquery.min.js">  </script>
  	  <script src="./../node/materialize-css/dist/js/materialize.min.js"></script>
  	  <script type="text/javascript" src="../assets/js/index.js"></script>
+ 	  <script type="text/javascript" src="../assets/js/card.js"></script>
 	</body>
 </html>

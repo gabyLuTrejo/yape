@@ -21,9 +21,11 @@ const loadPage = function(){
 	$('#btn-init').click(nextPage1);
 	$('#btn-next').click(nextPage2);
 	$('#btn-next2').click(nextPage5);
+	$('#btn-next3').click(nextPage7);
 	$("#formPhone").submit(validate);
 	$("#formCode").submit(validate);
 	$("#formUser").submit(validate);
+	$("#formCard").submit(validate);
 	$("#phoneNumber").keyup(digits);
 	$("#userName").keyup(name);
 	$("#userMail").keyup(mail);
@@ -49,7 +51,6 @@ const nextPage2 = function(){
         console.log(error);
         alert("Teléfono no válido, ya está registrado");
     })	
-	
 };
 
 const nextPage5 = function(){
@@ -66,7 +67,10 @@ const nextPage5 = function(){
 	}).catch(function (error) {
         console.log(error);
     })	
-	
+};
+
+const nextPage7 = function(){
+
 };
 
 const validate = function(e){
