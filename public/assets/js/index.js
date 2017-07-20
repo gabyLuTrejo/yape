@@ -8,6 +8,8 @@ const api = {
 };
 
 $("#phoneRegistered").text(localStorage.phone);
+var userMail = false;
+var userName = false;
 
 var registerData = function(data){
 	localStorage.phone = data.phone;
@@ -21,7 +23,11 @@ const loadPage = function(){
 	$('#btn-next2').click(nextPage5);
 	$("#formPhone").submit(validate);
 	$("#formCode").submit(validate);
+	$("#formUser").submit(validate);
 	$("#phoneNumber").keyup(digits);
+	$("#userName").keyup(name);
+	$("#userMail").keyup(mail);
+	$("#userPass").keyup(pass);
 };
 
 const nextPage1 = function(){
@@ -48,21 +54,20 @@ const nextPage2 = function(){
 
 const nextPage5 = function(){
 	console.log("next");
-	$.post(api.url,{
-		"phone": $("#phoneNumber").val(),
-		"terms": !($("#btn-next")[0].disabled)
+	$.post(api.user,{
+		"phone": localStorage.phone,
+		"name": $("#userName").val(),
+      	"email": $("#userMail").val(),
+      	"password": $("#userPass").val(),
 	}).then(function (response){
 		console.log(response.data);
-		alert("Código de Validación: " + response.data.code);
 		registerData(response.data);
-		window.location.href = "code.html ";
+		window.location.href = "success.html ";
 	}).catch(function (error) {
         console.log(error);
-        alert("Teléfono no válido, ya está registrado");
     })	
 	
 };
-
 
 const validate = function(e){
 	e.preventDefault();
@@ -84,16 +89,24 @@ const termsValidate = function(){
 	}
 };
 
-const userData = function(){
-	var userName = $("#userName").required;
-	var userMail = $("#userMail").required;
-	var userPass = $("#userPass").required;
-	if (userName && userMail && userPass) {
-		$("#btn-next2")[0].disabled = false;
-	} else {}
+const mail = function () {
+	userMail = $("#userMail")[0].validity.valid;
 };
 
+const name = function () {
+	userName = $("#userName")[0].validity.valid;
+};
 
+const pass = function(){
+	if(userName && userMail){
+		if ($("#userPass").val().length ==6) {
+			$("#btn-next2")[0].disabled = false;
+		} else {
+			$("#btn-next2")[0].disabled = true;
+		}	
+	}
+}
+	
 
 
 $(document).ready(loadPage);
