@@ -19,6 +19,9 @@ section.contain{
 .btn-yellow{
 	background-color: #fbd43b;
 }
+input[type=text].width-66{
+	width: 66.66%;
+}
 .width-80{	
 	width: 80%;	
 }
@@ -39,5 +42,8 @@ section.contain{
 }
 .marginTop-15{
 	margin-top: 15%;
+}
+.marginLeft-20{
+    margin-left: 20%;	
 }
 .material-icons.md-48 { font-size: 48px; }
