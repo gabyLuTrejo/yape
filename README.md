@@ -1,2 +1,2 @@
 # yape
-Código base para poder hacer el proyecto YAPE
+Código del proyecto YAPE, proyecto final sprint 6
