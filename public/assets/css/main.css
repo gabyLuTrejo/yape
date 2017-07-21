@@ -10,11 +10,20 @@ section.contain{
     width: 70%;
     margin: 15% 0 0 0;
 }
+.purple-dark{
+	background-color: #38052a;
+}
+.purple-light{
+	background-color: #451e36;
+}
 .gray-dark{
 	color: #212121;
 }
 .gray-text{
 	color: #8f8f8f;
+}
+.white-Text{
+	color: white!important;
 }
 .btn-yellow{
 	background-color: #fbd43b;
