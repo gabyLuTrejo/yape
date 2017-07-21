@@ -12,7 +12,7 @@
 	  <section class="contain">
 		<div class="right-align">
 			<a href="#"><i class="material-icons">help_outline</i></a>
-		</div>	  	
+		</div>
 		<div class="row marginTop-15">
 			<img class="responsive-img col s4 offset-s4" src="../img/icons/bcp-logo.png">
 		</div>
@@ -20,18 +20,19 @@
 			<h5 class="center"><strong>Registra tu tarjeta de dédito BPC</strong></h5>
 		    <p class="center gray-text col s10 offset-s1">Por ahora solo aceptamos cuentas de ahorro y/o corriente en soles</p>
 	    </div>
-	    <form id="formCard">		    
+	    <form id="formCard">
 	        <div class="input-field row">
 			  <div class="input-field">
-			    <div class="gray-text col s10 offset-s1"> 
-	            	<i class="material-icons prefix">credit_card</i>            	
-	            	<input id="cardNumber" type="number" class="center validate" max="16">
-	            </div>	            
+			    <div class="gray-text col s10 offset-s1">
+	            	<i class="material-icons prefix">credit_card</i>
+	            	<input id="cardNumber" type="tel" class="center validate">
+								<p id="numberValidation" class="center-align marginTop-n20">. . . .</p >
+	            </div>
 	          </div>
 	        </div>
 	    	<div class="row">
 		      <a class="center col s8 offset-s2">
-		        <i class="material-icons">center_focus_strong</i><span> Escanear Tarjeta</span> 
+		        <i class="material-icons">center_focus_strong</i><span> Escanear Tarjeta</span>
 		      </a>
 		    </div>
 		    <div class="row gray-text">
@@ -39,11 +40,13 @@
                     <span>Fecha de Vencimiento </span>
                 </div>
                 <div class="col s3">
-                    <input id="cardMonth" type="text" class="width-66 center" placeholder="Mes">
-                    <span class="marginLeft-20 gray-dark">/</span>
+                    <input id="cardMonth" type="text" class="width-66 center validate" placeholder="Mes">
+                    <span class="marginLeft-17 gray-dark">/</span>
+										<p id="monthValidation" class="center-align marginTop-n20">. . . .</p >
                 </div>
                 <div class="col s2">
-                    <input id="cardYear" type="text" class="center" placeholder="Año">
+                    <input id="cardYear" type="text" class="center validate" placeholder="Año">
+										<p id="yearValidation" class="center-align marginTop-n20">. . . .</p >
                 </div>
             </div>
             <div class="row center marginTop-15">
