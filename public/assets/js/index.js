@@ -8,6 +8,7 @@ const api = {
 };
 
 $("#phoneRegistered").text(localStorage.phone);
+$("#cardRegistered").text("****" + (localStorage.cardNumber%10000));
 var userMail = false;
 var userName = false;
 
@@ -22,11 +23,14 @@ const loadPage = function(){
 	$('#btn-next').click(nextPage2);
 	$('#btn-next2').click(nextPage5);
   $('#btn-next3').click(nextPage7);
+  $('#btn-next4').click(nextPage8);
 	$("#formPhone").submit(validate);
 	$("#formCode").submit(validate);
 	$("#formUser").submit(validate);
 	$("#formCard").submit(validate);
+  $("#formNip").submit(validate);
 	$("#phoneNumber").keyup(digits);
+  $("#cardNip").keyup(digitsNip);
 	$("#userName").keyup(name);
 	$("#userMail").keyup(mail);
 	$("#userPass").keyup(pass);
@@ -76,6 +80,24 @@ const nextPage7 = function(){
 	window.location.href="nip.html";
 };
 
+const nextPage8 = function(){
+	console.log(localStorage.phone);
+  console.log(localStorage.cardNumber.length);
+  console.log(localStorage.cardMonth);
+  console.log(localStorage.cardYear);
+  console.log(localStorage.cardPassword);
+  $.post(api.card,{
+  			"userId": localStorage.phone,
+    		"cardNumber": localStorage.cardNumber,
+        "cardMonth": localStorage.cardMonth,
+        "cardYear": localStorage.cardYear,
+        "cardPassword": localStorage.cardPassword
+  		}).then(function (response){
+  			console.log(response);
+  			window.location.href = "user.html ";
+  		})
+};
+
 const validate = function(e){
 	e.preventDefault();
 };
@@ -85,6 +107,16 @@ const digits = function(){
 	if (digitNumbers == 10) {
 		$("#term-conditions").click(termsValidate);
 	}
+};
+
+const digitsNip = function(){
+	var digitNip = $("#cardNip").val();
+	if (digitNip.length == 4) {
+    localStorage.cardPassword = digitNip;
+    $("#btn-next4")[0].disabled = false;
+    } else {
+    $("#btn-next4")[0].disabled = true;
+    }
 };
 
 const termsValidate = function(){
