@@ -22,8 +22,8 @@ section.contain{
 input[type=text].width-66{
 	width: 66.66%;
 }
-.width-80{	
-	width: 80%;	
+.width-80{
+	width: 80%;
 }
 .padd__sides-10{
 	padding: 0 10px;
@@ -43,7 +43,10 @@ input[type=text].width-66{
 .marginTop-15{
 	margin-top: 15%;
 }
-.marginLeft-20{
-    margin-left: 20%;	
+.marginTop-n20{
+	margin-top: -20px;
+}
+.marginLeft-17{
+    margin-left: 17%;
 }
 .material-icons.md-48 { font-size: 48px; }
