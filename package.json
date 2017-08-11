@@ -4,12 +4,9 @@
   "description": "Solución del Proyeto final del Sprint 5 - Yape!",
   "main": "server.js",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "build": "react-scripts build",
+    "deploy": "gh-pages -d public",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "eject": "react-scripts eject"
+    "start": "node server.js"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
