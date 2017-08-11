@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	  <title>Yape Sprint 6</title>
+	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	  <link type="text/css" rel="stylesheet" href="./../node/materialize-css/dist/css/materialize.min.css"  media="screen,projection"/>
+	  <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+	</head>
+	<body>
+	  <section class="contain">
+		<div class="row marginTop-15">
+			<img class="responsive-img col s4 offset-s4" src="../img/icons/lockone.png">
+		</div>
+		<div class="row">
+			<h5 class="center"><strong>Crea tu usuario Yape</strong></h5>
+		    <p class="center gray-text">Ingresa un nombre, email y clave de usuario.<span id="phoneRegistered"></span>.</p>
+	    </div>
+	    <form id="formUser">
+	        <div class="input-field">
+			  <div class="input-field">
+			    <div class="gray-text">
+	            	<i class="material-icons prefix">child_care</i>
+	            	<input id="userName" type="text" class="center validate" placeholder="Nombre" required="true">
+	            </div>
+	          </div>
+	        </div>
+	        <div class="input-field">
+			  <div class="input-field">
+			    <div class="gray-text">
+	            	<i class="material-icons prefix">mail_outline</i>
+	            	<input id="userMail" type="email" class="center validate" data-error="wrong" data-success="right" placeholder="correo@ejemplo.com" required="true">
+	            </div>
+	          </div>
+	        </div>
+	        <div class="input-field">
+			  <div class="input-field">
+			    <div class="gray-text">
+	            	<i class="material-icons prefix">lock_outline</i>
+	            	<input id="userPass" type="password" class="center validate" placeholder="Ingresa tu clave de 6 dígitos" required="true">
+	            </div>
+	          </div>
+	        </div>
+	    	<div class="row">
+		      <p class="center gray-text col s10 offset-s1">Cuida esta clave como oro, es tu acceso a Yape
+		      </p>
+		    </div>
+		    <div class="row center marginTop-15">
+		      <button id="btn-next2" class="btn waves-effect waves-light btn-yellow" type="submit" name="action" disabled>CONTINUAR</button>
+		    </div>
+	    </form>
+
+	  </section>
+	  <script type="text/javascript" src="./../node/jquery/dist/jquery.min.js">  </script>
+ 	  <script src="./../node/materialize-css/dist/js/materialize.min.js"></script>
+ 	  <script type="text/javascript" src="../assets/js/index.js"></script>
+	</body>
+</html>

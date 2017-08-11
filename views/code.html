@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	  <title>Yape Sprint 6</title>
+	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	  <link type="text/css" rel="stylesheet" href="./../node/materialize-css/dist/css/materialize.min.css"  media="screen,projection"/>
+	  <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+	</head>
+	<body>
+	  <section class="contain">
+	  	<a href="validate.html"><i class="material-icons md-48 gray-dark">keyboard_arrow_left</i></a>
+		<div class="row marginTop-15">
+			<img class="responsive-img col s4 offset-s4" src="../img/icons/message.png">
+		</div>
+		<div class="row">
+			<h5 class="center"><strong>Ahora ingresa tu código</strong></h5>
+		    <p class="center gray-text">Enviamos un SMS con el código de validación al número <strong id="phoneRegistered" class="gray-dark"></strong></p>
+	    </div>
+	    <form id="formCode">		    
+	        <div class="input-field">
+			  <div class="input-field">
+			    <div class="gray-text"> 
+	            	<i class="material-icons prefix">lock_outline</i>	            	
+	            	<input id="code" type="number" class="center validate">
+	            	<label for="code"> - - - - </label>
+	            </div>	            
+	          </div>
+	        </div>
+	    	<div class="row">
+		      <p class="center gray-text col s8 offset-s2">Reintentar en
+		        <i class="material-icons">query_builder</i><span id="countDown"></span> 
+		      </p>
+		    </div>
+	    </form>
+
+	  </section>
+	  <script type="text/javascript" src="./../node/jquery/dist/jquery.min.js">  </script>
+ 	  <script src="./../node/materialize-css/dist/js/materialize.min.js"></script>
+ 	  <script type="text/javascript" src="../assets/js/index.js"></script>
+ 	  <script type="text/javascript" src="../assets/js/validate.js"></script>
+	</body>
+</html>
